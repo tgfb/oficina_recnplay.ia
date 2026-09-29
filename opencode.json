@@ -1,0 +1,40 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "share": "disabled",
+  "autoupdate": false,
+  "provider": {
+    "cluster": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "CENTOPEIA Qwen-27B-latest",
+      "options": {
+        "baseURL": "{env:CLUSTER_BASE_URL}",
+        "apiKey": "{env:CLUSTER_API_KEY}"
+      },
+      "models": {
+        "{env:CLUSTER_MODEL}": {
+          "name": "CENTOPEIA",
+          "tool_call": true
+        }
+      }
+    }
+  },
+  "model": "cluster/{env:CLUSTER_MODEL}",
+  "permission": {
+    "edit": "deny",
+    "webfetch": "deny",
+    "bash": {
+      "*": "deny",
+      "tl status*": "allow",
+      "tl historico*": "allow",
+      "tl sensores*": "allow",
+      "tl fase *": "allow",
+      "tl modo *": "allow",
+      "tl politica*": "allow",
+      "tl placar*": "allow",
+      "tl raw*": "deny",
+      "tl seguranca*": "deny",
+      "tl daemon*": "deny",
+      "tl desafio*": "deny"
+    }
+  }
+}

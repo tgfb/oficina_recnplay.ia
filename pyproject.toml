@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "semaforo"
+version = "1.0.0"
+description = "Oficina Rec'n'Play: um agente de IA controla um semáforo Arduino pela CLI tl"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "pyserial>=3.5",
+    "rich>=13",
+]
+
+[project.scripts]
+tl = "semaforo.cli:main"
+
+[tool.setuptools]
+packages = ["semaforo"]
